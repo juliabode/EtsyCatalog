@@ -1,5 +1,5 @@
 $(function() {
-  $(".button").click(function() {
+  $(".button.submit-shopname").click(function() {
 
 	  var name = $("input#shopname").val();
 
@@ -18,13 +18,32 @@ $(function() {
 });
 
 $(document).ajaxComplete(function() {
-  var name = $("img.product-image");
-  console.log(name);
+
   $("img.product-image").click(function() {
     if ( $(this).hasClass('active') ) {
       $(this).removeClass('active');
     } else {
       $(this).addClass('active');
-    } 
+    }
   });
+
+  $(".button.submit-listing_ids").click(function() {
+
+    var dataString = 'product_ids=';
+
+    $("img.product-image.active").each(function () {
+      dataString = dataString + $(this).attr('data-id') + ',';
+    });
+    
+    $.ajax({
+      type: "POST",
+      url: "bin/display_details.php",
+      data: dataString,
+      success: function(data) {
+        $("#success > div").replaceWith( data );
+      }
+     });
+    return false;
+  });
+
 });

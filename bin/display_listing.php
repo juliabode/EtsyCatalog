@@ -3,7 +3,7 @@
 define( 'API_KEY', 'js72ltwo7txbx0x1m2yzmpkj' );
 
 $shop_name     = $_REQUEST['name'];
-$url           = "http://openapi.etsy.com/v2/shops/" . $shop_name . "/listings/active?fields=title,url&includes=MainImage(url_170x135)&api_key=" . API_KEY;
+$url           = "http://openapi.etsy.com/v2/shops/" . $shop_name . "/listings/active?fields=listing_id,title,url&includes=MainImage(url_170x135)&api_key=" . API_KEY;
 $ch            = curl_init($url);
 
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -17,17 +17,18 @@ $listings = $response->results;
 
 ?>
 
-<div class="products">
-  <header>
-    <h1><?php echo "The shop you requested is $shop_name."; ?></h1>
+<div class="products result-list">
+  <header class="clearfix">
+    <h1 class="alignleft"><?php echo "The shop you requested is $shop_name."; ?></h1>
+    <div class="button awesome large alignright submit-listing_ids">continue &raquo;</div>
   </header>
   <?php
     foreach ( $listings as $listing ) {
-      $title   = $listing->title;
-      $url     = $listing->url;
-      $img_url = $listing->MainImage->url_170x135;
+      $title        = $listing->title;
+      $img_url      = $listing->MainImage->url_170x135;
+      $listing_id   = $listing->listing_id;
 
-      echo "<img class='product-image' src='$img_url' alt='$title' />";
+      echo "<img data-id='$listing_id' class='product-image' src='$img_url' alt='$title' />";
     }
   ?>
 </div>
