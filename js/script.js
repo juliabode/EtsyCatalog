@@ -16,3 +16,15 @@ $(function() {
     return false;
 	});
 });
+
+$(document).ajaxComplete(function() {
+  var name = $("img.product-image");
+  console.log(name);
+  $("img.product-image").click(function() {
+    if ( $(this).hasClass('active') ) {
+      $(this).removeClass('active');
+    } else {
+      $(this).addClass('active');
+    } 
+  });
+});

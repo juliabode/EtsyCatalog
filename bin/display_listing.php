@@ -27,7 +27,7 @@ $listings = $response->results;
       $url     = $listing->url;
       $img_url = $listing->MainImage->url_170x135;
 
-      echo "<a href='$url'><img class='product-image' src='$img_url' alt='$title' /></a></h2>";
+      echo "<img class='product-image' src='$img_url' alt='$title' />";
     }
   ?>
 </div>
