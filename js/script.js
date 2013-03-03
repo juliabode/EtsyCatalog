@@ -19,7 +19,7 @@ $(function() {
 
 $(document).ajaxComplete(function() {
 
-  $("img.product-image").click(function() {
+  $(".product-image-list img.product-image").click(function() {
     if ( $(this).hasClass('active') ) {
       $(this).removeClass('active');
     } else {

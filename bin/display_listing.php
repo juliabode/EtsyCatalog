@@ -17,7 +17,7 @@ $listings = $response->results;
 
 ?>
 
-<div class="products result-list">
+<div class="product-image-list result-list">
   <header class="clearfix">
     <h1 class="alignleft"><?php echo "The shop you requested is $shop_name."; ?></h1>
     <div class="button awesome large alignright submit-listing_ids">continue &raquo;</div>
