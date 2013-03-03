@@ -46,4 +46,23 @@ $(document).ajaxComplete(function() {
     return false;
   });
 
+  $(".button.submit-get_pdf").click(function() {
+
+	  var name = $("#success").html();
+
+		var dataString = 'html='+ name;
+		
+		$.ajax({
+      type: "POST",
+      url: "bin/process_pdf.php",
+      data: dataString,
+      success: function(data) {
+        window.location.href = data;
+        var output = '<div class="result-list"><header><h1>Your pdf was created.</h1><header></div>'
+        $("#success").html( output );
+      }
+     });
+    return false;
+  });
+
 });

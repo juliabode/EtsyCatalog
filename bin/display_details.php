@@ -19,7 +19,7 @@ $chosen_listings = $response->results;
 
 <div class="products result-list">
   <header class="clearfix">
-    <div class="button awesome large alignright submit-listing_ids">continue &raquo;</div>
+    <div class="button awesome large alignright submit-get_pdf">continue &raquo;</div>
   </header>
   <?php
     foreach ( $chosen_listings as $listing ) {

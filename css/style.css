@@ -63,6 +63,8 @@ header { padding: 20px 10px; }
 }
 .awesome:hover	 { background-color: #630030; }
 
+.product-detail { margin: 10px 0; }
 .product-detail .desc {
   width: 800px;
+  margin-top: 12px;
 }
