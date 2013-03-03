@@ -17,6 +17,10 @@ $(function() {
 	});
 });
 
+$(document).ready(function() {
+  $(".container > p a").on("click", function() {  $("#shopname").val($(this).text()) })
+});
+
 $(document).ajaxComplete(function() {
 
   $(".product-image-list img.product-image").click(function() {

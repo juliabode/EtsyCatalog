@@ -19,7 +19,7 @@ $listings = $response->results;
 
 <div class="product-image-list result-list">
   <header class="clearfix">
-    <h1 class="alignleft"><?php echo "The shop you requested is $shop_name."; ?></h1>
+    <h1 class="alignleft"><?php echo "Showing you products from $shop_name's shop on Etsy:"; ?></h1>
     <div class="button awesome large alignright submit-listing_ids">continue &raquo;</div>
   </header>
   <?php
